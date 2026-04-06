@@ -1,0 +1,59 @@
+#Задание 1
+
+def add(a, b):
+    return a + b
+
+def power(a, n=2):
+    return a ** n
+
+def sum_all(*args):
+    total = 0
+    for value in args:
+        total += value
+    return total
+
+
+a = int(input("Введите число"))
+print(add,power,sum_all)
+
+#Задание 2
+x = 10 
+
+def change_value():
+    global x
+    x = 20 
+
+print("До функции:", x)
+change_value()
+print("После функции:", x)
+
+#Задание 3
+def factorial_recursive(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial_recursive(n - 1)
+
+def factorial_iterative(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+#Задание 4
+def sum_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + sum_digits(n // 10)
+
+print(sum_digits(1234))  
+
+#Задание 5
+def max_element(arr, index=0):
+    if index == len(arr) - 1:
+        return arr[index]
+    
+    max_rest = max_element(arr, index + 1)
+    return arr[index] if arr[index] > max_rest else max_rest
+
+
+print(max_element([3, 7, 2, 9, 5]))  
